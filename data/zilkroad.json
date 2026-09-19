@@ -1,0 +1,88 @@
+{
+ "at": "2026-09-19T05:32:50.428Z",
+ "source": "zilkroad.com/api/market",
+ "floorZec": 1.989,
+ "supply": 10000,
+ "sales24h": 560,
+ "salesTotal": 560,
+ "volume24hZec": 1519.8821,
+ "volumeTotalZec": 1519.8821,
+ "zecUsd": 1546.41,
+ "rateSource": "coingecko",
+ "fillsSampled": 50,
+ "medianFillZec": 2,
+ "lastSales": [
+  {
+   "id": 5377,
+   "priceZec": 2,
+   "at": "2026-09-19T05:32:10.847Z",
+   "via": "ask"
+  },
+  {
+   "id": 8380,
+   "priceZec": 1.9346,
+   "at": "2026-09-19T05:32:10.082Z",
+   "via": "ask"
+  },
+  {
+   "id": 1656,
+   "priceZec": 2.39,
+   "at": "2026-09-19T05:30:52.478Z",
+   "via": "ask"
+  },
+  {
+   "id": 6716,
+   "priceZec": 1.94,
+   "at": "2026-09-19T05:30:52.398Z",
+   "via": "ask"
+  },
+  {
+   "id": 7663,
+   "priceZec": 2.07,
+   "at": "2026-09-19T05:30:52.209Z",
+   "via": "ask"
+  },
+  {
+   "id": 7231,
+   "priceZec": 9,
+   "at": "2026-09-19T05:30:52.148Z",
+   "via": "ask"
+  },
+  {
+   "id": 2707,
+   "priceZec": 1.97,
+   "at": "2026-09-19T05:30:52.052Z",
+   "via": "ask"
+  },
+  {
+   "id": 4740,
+   "priceZec": 1.942,
+   "at": "2026-09-19T05:30:51.873Z",
+   "via": "ask"
+  },
+  {
+   "id": 347,
+   "priceZec": 2.2,
+   "at": "2026-09-19T05:30:51.802Z",
+   "via": "ask"
+  },
+  {
+   "id": 871,
+   "priceZec": 2.5,
+   "at": "2026-09-19T05:30:51.725Z",
+   "via": "ask"
+  },
+  {
+   "id": 3134,
+   "priceZec": 1.96,
+   "at": "2026-09-19T05:30:51.645Z",
+   "via": "ask"
+  },
+  {
+   "id": 4645,
+   "priceZec": 1.9432,
+   "at": "2026-09-19T05:27:00.560Z",
+   "via": "ask"
+  }
+ ]
+}

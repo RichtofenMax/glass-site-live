@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>GLASS // the glass vault</title>
+<meta name="description" content="A curve coin on Zcash. Fees are visible the block they are paid. Eighty percent of every fee buys zkSNARKs into a vault anyone can read.">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <script type="module" crossorigin src="./assets/index-taWEmwCU.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CXQUGF37.css">
+</head>
+<body data-v="home">
+
+<!-- loader: removed by main.js once the bar fills; skipped within a session -->
+<div id="loader" aria-hidden="true">
+  <pre id="loadmark" class="mark"></pre>
+  <div class="loadbar"><i id="fill"></i></div>
+  <div class="loadmeta"><span id="loadmsg">initialising</span><span class="pc" id="pc">0%</span></div>
+  <button type="button" id="enter" class="btn enter" hidden>[ ENTER ]</button>
+  <div class="loadnote" id="loadnote" hidden>sound on · mute top right</div>
+</div>
+
+<div id="shell">
+  <!-- full-bleed stage: the glass vault. Painted by src/stage.js -->
+  <div id="stage" aria-hidden="true"></div>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div id="scan" aria-hidden="true"></div>
+  <div id="vig" aria-hidden="true"></div>
+
+  <!-- HUD corners -->
+  <a id="logo" class="hud tl" href="#/" aria-label="glass — home"><pre class="mark small" id="logomark"></pre><span class="sub">$ZEC · node-glass</span></a>
+  <div class="hud tc"><span class="chip pending" id="statchip"><i></i><span id="statchiptext">pre-launch · gate 1</span></span></div>
+  <div class="hud tr">
+    <button type="button" id="sndbtn" class="sndbtn" aria-pressed="false" aria-label="sound: off" title="sound">
+      <svg viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect x="1" y="5" width="2" height="4"/><rect x="5.5" y="2" width="2" height="10"/><rect x="10" y="4" width="2" height="6"/><rect x="14.5" y="1" width="2" height="12"/></svg>
+    </button>
+  </div>
+  <a class="hud bl btn" href="#/how" id="howlink">[ HOW IT WORKS ]</a>
+  <button type="button" class="hud br btn vio" id="menubtn" aria-expanded="false" aria-controls="index">[ <span id="menulbl">INDEX</span> ]</button>
+  <div class="statusline" id="statusline"><b>node-glass</b> · <span id="stat">pre-launch</span><span class="bc"> · height 3,487,653 at publish</span></div>
+  <div class="hint" id="hint"></div>
+
+  <!-- index overlay -->
+  <nav id="index" aria-label="index">
+    <div class="ihead"><span>index</span><span class="bc">node-glass · directory</span></div>
+    <div class="ilist" id="ilist"></div>
+    <div class="ifoot">press 1–6 to jump · m for index · esc to close</div>
+  </nav>
+
+  <!-- views: one section per route; pages render into these -->
+  <section class="view" id="v-home" data-view="home"></section>
+  <section class="view" id="v-terminal" data-view="terminal"><div class="panel"><i class="fr t"></i><i class="fr r"></i><i class="fr b"></i><i class="fr l"></i><i class="rg tl"></i><i class="rg tr"></i><i class="rg bl"></i><i class="rg br"></i><div class="mount"></div></div></section>
+  <section class="view" id="v-vault" data-view="vault"><div class="panel"><i class="fr t"></i><i class="fr r"></i><i class="fr b"></i><i class="fr l"></i><i class="rg tl"></i><i class="rg tr"></i><i class="rg bl"></i><i class="rg br"></i><div class="mount"></div></div></section>
+  <section class="view" id="v-genesis" data-view="genesis"><div class="panel"><i class="fr t"></i><i class="fr r"></i><i class="fr b"></i><i class="fr l"></i><i class="rg tl"></i><i class="rg tr"></i><i class="rg bl"></i><i class="rg br"></i><div class="mount"></div></div></section>
+  <section class="view" id="v-rule" data-view="rule"><div class="panel"><i class="fr t"></i><i class="fr r"></i><i class="fr b"></i><i class="fr l"></i><i class="rg tl"></i><i class="rg tr"></i><i class="rg bl"></i><i class="rg br"></i><div class="mount"></div></div></section>
+  <section class="view" id="v-how" data-view="how"><div class="panel"><i class="fr t"></i><i class="fr r"></i><i class="fr b"></i><i class="fr l"></i><i class="rg tl"></i><i class="rg tr"></i><i class="rg bl"></i><i class="rg br"></i><div class="mount"></div></div></section>
+</div>
+
+</body>
+</html>

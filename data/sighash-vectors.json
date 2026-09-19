@@ -1,0 +1,103 @@
+{
+  "cases": [
+    {
+      "branchId": "37a5165b",
+      "expiryHeight": 0,
+      "inputs": [
+        {
+          "scriptCode": "76a91479b000887626b294a914501a4cd226b58b23598388ac",
+          "scriptPubKey": "76a91479b000887626b294a914501a4cd226b58b23598388ac",
+          "sequence": 4294967295,
+          "txid": "1111111111111111111111111111111111111111111111111111111111111111",
+          "value": 100000,
+          "vout": 0
+        }
+      ],
+      "lockTime": 0,
+      "name": "one p2pkh in, one out",
+      "outputs": [
+        {
+          "scriptPubKey": "76a914ebc0ee0b2ab9e8277a600c251475e22a3241a1c188ac",
+          "value": 90000
+        }
+      ],
+      "sighashes": [
+        "eff7de6387048a3a07636b1c2c62ca7e2853534f99c479dc205c31e9630f5be4"
+      ]
+    },
+    {
+      "branchId": "37a5165b",
+      "expiryHeight": 3488800,
+      "inputs": [
+        {
+          "scriptCode": "635221031b84c5567b126440995d3ed5aaba0565d71e1834604819ff9c17f5e9d5dd078f21024d4b6cd1361032ca9bd2aeb9d900aa4d45d9ead80ac9423374c451a7254d076621031b84c5567b126440995d3ed5aaba0565d71e1834604819ff9c17f5e9d5dd078f53ae6703e06735b17521024d4b6cd1361032ca9bd2aeb9d900aa4d45d9ead80ac9423374c451a7254d0766ac68",
+          "scriptPubKey": "a914c8d710497c46c8c7af20ce0516f96f5699a125d987",
+          "sequence": 4294967295,
+          "txid": "2222222222222222222222222222222222222222222222222222222222222222",
+          "value": 10000,
+          "vout": 0
+        },
+        {
+          "scriptCode": "76a91479b000887626b294a914501a4cd226b58b23598388ac",
+          "scriptPubKey": "76a91479b000887626b294a914501a4cd226b58b23598388ac",
+          "sequence": 4294967295,
+          "txid": "3333333333333333333333333333333333333333333333333333333333333333",
+          "value": 500000,
+          "vout": 2
+        }
+      ],
+      "lockTime": 0,
+      "name": "a trade: pool P2SH head + trader p2pkh, with a stone",
+      "outputs": [
+        {
+          "scriptPubKey": "a914c8d710497c46c8c7af20ce0516f96f5699a125d987",
+          "value": 210000
+        },
+        {
+          "scriptPubKey": "76a91479b000887626b294a914501a4cd226b58b23598388ac",
+          "value": 10000
+        },
+        {
+          "scriptPubKey": "6a5e101601650100c9f6d4012bc0cfe3dc0300",
+          "value": 0
+        },
+        {
+          "scriptPubKey": "76a91479b000887626b294a914501a4cd226b58b23598388ac",
+          "value": 275000
+        }
+      ],
+      "sighashes": [
+        "f30c30a5ade0a06982cde08ba2f53ae61661903549cf966cea465df459659053",
+        "eb6de60bd16f255647c33e1c091a74f3247c313ef3779489577fb4c4bd8a7f64"
+      ]
+    },
+    {
+      "branchId": "37a5165b",
+      "expiryHeight": 3500040,
+      "inputs": [
+        {
+          "scriptCode": "635221031b84c5567b126440995d3ed5aaba0565d71e1834604819ff9c17f5e9d5dd078f21024d4b6cd1361032ca9bd2aeb9d900aa4d45d9ead80ac9423374c451a7254d076621031b84c5567b126440995d3ed5aaba0565d71e1834604819ff9c17f5e9d5dd078f53ae6703e06735b17521024d4b6cd1361032ca9bd2aeb9d900aa4d45d9ead80ac9423374c451a7254d0766ac68",
+          "scriptPubKey": "a914c8d710497c46c8c7af20ce0516f96f5699a125d987",
+          "sequence": 4294967294,
+          "txid": "4444444444444444444444444444444444444444444444444444444444444444",
+          "value": 20000,
+          "vout": 1
+        }
+      ],
+      "lockTime": 3500000,
+      "name": "cltv: lock_time set, sequence not final",
+      "outputs": [
+        {
+          "scriptPubKey": "76a914ebc0ee0b2ab9e8277a600c251475e22a3241a1c188ac",
+          "value": 10000
+        }
+      ],
+      "sighashes": [
+        "7856ad178f7e0661021ed15302e745ec84a59f275d6622f26c4cbe51d18c0da0"
+      ]
+    }
+  ],
+  "generatedBy": "glass-tx sighash-vectors (zcash_primitives 0.30)",
+  "note": "the browser wallet MUST reproduce every digest from the transaction alone; signing a digest it did not derive is trusting the counterparty about what it signs",
+  "spec": "ZIP-244 SIGHASH_ALL digests for GLASS transparent v5 transactions"
+}

@@ -1,0 +1,107 @@
+{
+ "note": "Gate 1c (spec 5.3). Every stone shape GLASS emits, plus the deliberately malformed twins. 'decoder' is what OUR reference decoder must do; 'indexer' is what ZRunes' own indexer must conclude. Where they differ ours is stricter on purpose: a cenotaph on a head spend burns the pool's entire GLASS and cannot be undone.",
+ "rune": {
+  "block": 3488585,
+  "tx": 43
+ },
+ "vectors": [
+  {
+   "name": "buy-canonical",
+   "script": "6a5e0d1601650100c9f6d4012bea0300",
+   "decoder": "accept",
+   "indexer": "valid",
+   "why": "the exact shape op.rs stone_buy emits: pointer at the trader, one edict naming what stays with the pool"
+  },
+  {
+   "name": "sell-canonical",
+   "script": "6a5e0d1601670100c9f6d4012ba60900",
+   "decoder": "accept",
+   "indexer": "valid",
+   "why": "the exact shape op.rs stone_sell emits"
+  },
+  {
+   "name": "tag-105-reserved-ignored",
+   "script": "6a5e0f16016501690100c9f6d4012bea0300",
+   "decoder": "accept",
+   "indexer": "valid",
+   "why": "spec 5.3: tag 105 was MIN_OUT in draft 0.2, is never emitted, and must be ignored if seen"
+  },
+  {
+   "name": "tag-101-twice",
+   "script": "6a5e0f16016501650100c9f6d4012bea0300",
+   "decoder": "refuse",
+   "indexer": "valid",
+   "why": "spec 5.3: a repeated GLASS tag is a breach on a head spend; ZRunes ignores unknown odd tags so the INDEXER still reads it, and ours must be the stricter one"
+  },
+  {
+   "name": "tag-101-and-103",
+   "script": "6a5e0f16016501670100c9f6d4012bea0300",
+   "decoder": "accept",
+   "indexer": "valid",
+   "why": "two side markers on one transaction: a well-formed stone the RULE must refuse, not the decoder"
+  },
+  {
+   "name": "even-unknown-tag-26",
+   "script": "6a5e0f16011a01650100c9f6d4012bea0300",
+   "decoder": "refuse",
+   "indexer": "cenotaph",
+   "why": "an even tag the spec does not define makes the stone MALFORMED to a ZRunes indexer, which burns every input balance; on a head spend that is the pool's entire GLASS"
+  },
+  {
+   "name": "even-unknown-tag-30",
+   "script": "6a5e0f16011e07650100c9f6d4012bea0300",
+   "decoder": "refuse",
+   "indexer": "cenotaph",
+   "why": "same, with a different even tag and a value that is not 1"
+  },
+  {
+   "name": "descending-tags",
+   "script": "6a5e0d6501160100c9f6d4012bea0300",
+   "decoder": "refuse",
+   "indexer": "cenotaph",
+   "why": "tags must ascend; this is the bug that would have burned the pool on its first trade"
+  },
+  {
+   "name": "edict-amount-zero",
+   "script": "6a5e0c1601670100c9f6d4012b0000",
+   "decoder": "accept",
+   "indexer": "valid",
+   "why": "amount 0 means ALL REMAINING in ZRunes: well formed, and never valid for a trade"
+  },
+  {
+   "name": "edict-past-last-output",
+   "script": "6a5e0d1601650100c9f6d4012bea0309",
+   "decoder": "accept",
+   "indexer": "cenotaph",
+   "why": "an edict naming an output that does not exist is malformed to an indexer; the decoder cannot see the output count, so allocation is what must refuse"
+  },
+  {
+   "name": "pointer-past-last-output",
+   "script": "6a5e0d1609650100c9f6d4012bea0300",
+   "decoder": "accept",
+   "indexer": "cenotaph",
+   "why": "same for the pointer: caught at allocation, not at decode"
+  },
+  {
+   "name": "truncated-varint",
+   "script": "6a5e021680",
+   "decoder": "refuse",
+   "indexer": "cenotaph",
+   "why": "a varint that runs off the end of the payload"
+  },
+  {
+   "name": "not-op14",
+   "script": "6a510100",
+   "decoder": "refuse",
+   "indexer": "valid",
+   "why": "OP_RETURN OP_1, not OP_14: not a ZRunestone at all"
+  },
+  {
+   "name": "oversize-payload",
+   "script": "6a5e4c501601650100c9f6d4012bea0300",
+   "decoder": "refuse",
+   "indexer": "cenotaph",
+   "why": "the push length claims 80 bytes; the network relays at most 79 and the payload does not match it"
+  }
+ ]
+}
